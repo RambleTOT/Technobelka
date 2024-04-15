@@ -3,6 +3,7 @@
     <string name="text_forgot_password">Если вы забыли пароль, обратитесь к администратору</string>
     <string name="text_login">Вход</string>
     <string name="text_school_800">ШКОЛА 800</string>
+    <string name="text_by_inverse">by Inverse</string>
     <string name="text_to_login">Войти</string>
     <string name="text_person_login">Логин</string>
     <string name="text_password">Пароль</string>

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.databinding.FragmentSplashScreenBinding
 
@@ -25,6 +26,8 @@ class SplashScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val fadeInAnimation = AnimationUtils.loadAnimation(requireActivity(), R.anim.splash_screen_animation)
+        binding!!.linearSplash.startAnimation(fadeInAnimation)
         Handler().postDelayed(Runnable {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
             val loginFragment = LoginFragment()
