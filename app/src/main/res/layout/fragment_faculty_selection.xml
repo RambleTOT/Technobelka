@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragments.FacultySelectionFragment"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_select_faculty"
+                android:layout_gravity="center"
+                android:textColor="@color/color_text_title"
+                android:fontFamily="@font/arial_bold"
+                android:textSize="24sp"
+                android:layout_marginTop="32dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_select_info"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_cannot_be_changed"
+                    android:layout_gravity="center"
+                    android:textColor="@color/color_orange"
+                    android:fontFamily="@font/arial_regular"
+                    android:textSize="16sp"
+                    android:layout_marginStart="4dp"/>
+
+            </LinearLayout>
+            
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_houses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                tools:listitem="@layout/item_faculty"/>
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="end"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/button_random"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="@drawable/button_random_background"
+                    android:background="@android:color/transparent"
+                    android:paddingVertical="21dp"
+                    android:text="@string/text_random"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="31dp"
+                    android:textColor="@color/color_background_button"
+                    android:textSize="18sp"
+                    app:cornerRadius="100dp"
+                    android:fontFamily="@font/arial_bold"
+                    android:lineSpacingExtra="4sp"
+                    android:enabled="false"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/button_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/color_background_button"
+                    android:paddingVertical="21dp"
+                    android:text="@string/text_to_select"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="31dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:cornerRadius="100dp"
+                    android:fontFamily="@font/arial_bold"
+                    android:lineSpacingExtra="4sp"
+                    android:enabled="false" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

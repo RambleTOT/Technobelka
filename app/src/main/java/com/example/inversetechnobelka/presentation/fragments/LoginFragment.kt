@@ -136,10 +136,10 @@ class LoginFragment : Fragment() {
 //                    firstEntryManager.saveFirstEntry(true)
                     binding!!.progressLogin.visibility = View.INVISIBLE
                     Toast.makeText(activity, "Успех", Toast.LENGTH_SHORT).show()
-//                    val transaction = activity!!.supportFragmentManager.beginTransaction()
-//                    transaction.replace(R.id.layout_fragment, BottomNavBarFragment())
-//                    transaction.disallowAddToBackStack()
-//                    transaction.commit()
+                    val transaction = activity!!.supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.layout_fragment, FacultySelectionFragment())
+                    transaction.disallowAddToBackStack()
+                    transaction.commit()
                 }else{
                     binding!!.textErrorLogin.visibility = View.VISIBLE
                     binding!!.buttonLogin.visibility = View.VISIBLE

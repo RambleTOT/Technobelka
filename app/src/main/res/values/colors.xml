@@ -10,4 +10,6 @@
     <color name="color_error">#EB5757</color>
     <color name="color_block_button">#33B0B3B8</color>
     <color name="color_block_button_text">#47101114</color>
+    <color name="color_orange">#EE7527</color>
+    <color name="color_orange_item_faculty_student">#14EE7527</color>
 </resources>

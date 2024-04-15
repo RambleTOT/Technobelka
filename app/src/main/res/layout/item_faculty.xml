@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/item_faculty_background"
+    android:orientation="vertical"
+    android:layout_marginBottom="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginVertical="16dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:elevation="0dp"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="57dp"
+                    android:layout_height="57dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/test_photo" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/arial_bold"
+                android:text="Гриффиндор"
+                android:textColor="@color/color_text_title"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_student_item_faculty"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/user_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arial_regular"
+                android:includeFontPadding="false"
+                android:text="200 участников"
+                android:textColor="@color/color_orange"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arial_bold"
+            android:text="@string/text_about_faculty"
+            android:textColor="@color/color_text_title"
+            android:textSize="16sp"
+            android:includeFontPadding="false"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arial_regular"
+            tools:text="Среди наших учеников царит дух смелости
+и отваги. Мы приветствуем инициативу и поощеряем самых ярких и активных"
+            android:textColor="@color/color_text_title"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arial_bold"
+            android:text="@string/text_about_faculty"
+            android:textColor="@color/color_text_title"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:includeFontPadding="false"/>
+
+        <TextView
+            android:id="@+id/our_values"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arial_regular"
+            tools:text="Среди наших учеников царит дух смелости
+и отваги. Мы приветствуем инициативу и поощеряем самых ярких и активных"
+            android:textColor="@color/color_text_title"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
