@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="color_text_description">#979797</color>
+    <color name="color_text_title">#222222</color>
+    <color name="color_background_button">#3B4365</color>
+    <color name="color_background_edittext">#F8F8FA</color>
+    <color name="text_color_edit_text">#252525</color>
+    <color name="color_error">#EB5757</color>
+    <color name="color_block_button">#33B0B3B8</color>
+    <color name="color_block_button_text">#47101114</color>
 </resources>
