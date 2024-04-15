@@ -2,6 +2,7 @@ package com.example.inversetechnobelka.presentation.fragments
 
 import GetTokenResponse
 import UserLoginEntity
+import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Color.parseColor
@@ -110,12 +111,15 @@ class LoginFragment : Fragment() {
         })
     }
 
+    @SuppressLint("ResourceAsColor")
     private fun blockButton(){
         if (isEmptyLogin && isEmptyPassword){
             binding!!.buttonLogin.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(requireActivity(), R.color.color_background_button))
+            binding!!.buttonLogin.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(), R.color.white)))
             binding!!.buttonLogin.isEnabled = true
         }else if (!isEmptyLogin || !isEmptyPassword){
             binding!!.buttonLogin.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(requireActivity(), R.color.color_block_button))
+            binding!!.buttonLogin.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(), R.color.color_block_button_text)))
             binding!!.buttonLogin.isEnabled = false
         }
     }
