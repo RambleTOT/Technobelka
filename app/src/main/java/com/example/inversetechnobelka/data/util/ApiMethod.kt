@@ -4,6 +4,7 @@ import GetTokenResponse
 import UserLoginEntity
 import UserLoginPatchEntity
 import com.example.inversetechnobelka.data.model.GetHousesResponse
+import com.example.inversetechnobelka.data.model.GetMyAccountResponse
 import com.example.inversetechnobelka.data.model.GetUserPathHouseResponse
 import retrofit2.Call
 import retrofit2.http.Body
@@ -28,5 +29,10 @@ interface ApiMethod {
         @Body body: UserLoginPatchEntity,
         @Header("Authorization") token: String
     ): Call<GetUserPathHouseResponse>
+
+    @GET("users/me/")
+    fun getMyAccount(
+        @Header("Authorization") token: String
+    ): Call<GetMyAccountResponse>
 
 }

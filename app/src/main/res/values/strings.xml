@@ -5,6 +5,7 @@
     <string name="text_school_800">ШКОЛА 800</string>
     <string name="text_by_inverse">by Inverse</string>
     <string name="text_to_login">Войти</string>
+    <string name="text_to_add">Добавить</string>
     <string name="text_to_select">Выбрать</string>
     <string name="text_to_next">Далее</string>
     <string name="text_random">Рандом</string>
@@ -22,6 +23,8 @@
     <string name="text_tasks">Задачи</string>
     <string name="text_events">События</string>
     <string name="text_profile">Профиль</string>
+    <string name="text_my_events">Мои события</string>
+    <string name="text_my_achievements">Мои достижения</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
