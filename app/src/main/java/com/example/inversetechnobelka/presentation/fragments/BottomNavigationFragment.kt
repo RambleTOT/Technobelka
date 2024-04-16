@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.inversetechnobelka.HomeFragment
 import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.RatingFragment
 import com.example.inversetechnobelka.TasksFragment
