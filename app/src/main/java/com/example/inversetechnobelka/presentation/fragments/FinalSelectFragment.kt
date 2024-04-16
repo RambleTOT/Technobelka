@@ -42,6 +42,7 @@ class FinalSelectFragment : Fragment() {
         tokenManager = TokenManager(requireActivity())
         val bundle = this.arguments
         val id = bundle!!.getInt("id")
+        Log.d("MyLog", id.toString())
         val name = bundle!!.getString("name")
         binding!!.name.text = "${name}!"
         binding!!.buttonSelect.setOnClickListener {
@@ -59,7 +60,8 @@ class FinalSelectFragment : Fragment() {
     }
 
     private fun addHouse(houseId: Int){
-        RetrofitHelper().getApi().changeUserHouse(UserLoginPatchEntity(id), "Token ${tokenManager.getToken()}").enqueue(object :
+        Log.d("MyLog", houseId.toString())
+        RetrofitHelper().getApi().changeUserHouse(UserLoginPatchEntity(houseId), "Token ${tokenManager.getToken()}").enqueue(object :
             Callback<GetUserPathHouseResponse> {
             override fun onResponse(
                 call: Call<GetUserPathHouseResponse>,

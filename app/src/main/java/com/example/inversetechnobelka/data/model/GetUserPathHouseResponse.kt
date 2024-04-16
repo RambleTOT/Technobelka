@@ -12,5 +12,5 @@ data class GetUserPathHouseResponse(
     @SerializedName("lastname")
     val lastname: String?,
     @SerializedName("login")
-    val login: Int?,
+    val login: String?,
 )
