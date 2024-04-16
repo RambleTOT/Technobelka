@@ -20,6 +20,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.databinding.FragmentLoginBinding
+import com.example.inversetechnobelka.presentation.managers.FirstEntryManager
 import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
 import com.example.inversetechnobelka.presentation.managers.TokenManager
 import retrofit2.Call
@@ -32,6 +33,7 @@ class LoginFragment : Fragment() {
     private var isEmptyLogin = false
     private var isEmptyPassword = false
     private lateinit var tokenManager: TokenManager
+    private lateinit var firstEntryManager: FirstEntryManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +52,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun init(){
+        firstEntryManager = FirstEntryManager(requireActivity())
         tokenManager = TokenManager(requireActivity())
 //        firstEntryManager = FirstEntryManager(requireActivity())
         binding!!.buttonLogin.setOnClickListener {
@@ -135,13 +138,20 @@ class LoginFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     tokenManager.saveToken(response.body()!!.token.toString())
-//                    firstEntryManager.saveFirstEntry(true)
+                    firstEntryManager.saveFirstEntry(true)
                     binding!!.progressLogin.visibility = View.INVISIBLE
-                    Toast.makeText(activity, "Успех", Toast.LENGTH_SHORT).show()
-                    val transaction = activity!!.supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.layout_fragment, FacultySelectionFragment())
-                    transaction.disallowAddToBackStack()
-                    transaction.commit()
+                    Log.d("MyLog", response.body()!!.house.toString())
+                    if(response.body()!!.house == null){
+                        val transaction = activity!!.supportFragmentManager.beginTransaction()
+                        transaction.replace(R.id.layout_fragment, FacultySelectionFragment())
+                        transaction.disallowAddToBackStack()
+                        transaction.commit()
+                    }else {
+                        val transaction = activity!!.supportFragmentManager.beginTransaction()
+                        transaction.replace(R.id.layout_fragment, BottomNavigationFragment())
+                        transaction.disallowAddToBackStack()
+                        transaction.commit()
+                    }
                 }else{
                     binding!!.textErrorLogin.visibility = View.VISIBLE
                     binding!!.buttonLogin.visibility = View.VISIBLE

@@ -8,10 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.inversetechnobelka.BottomNavigationFragment
 import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.data.model.GetUserPathHouseResponse
 import com.example.inversetechnobelka.databinding.FragmentFinalSelectBinding
+import com.example.inversetechnobelka.presentation.managers.FirstEntryManager
 import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
 import com.example.inversetechnobelka.presentation.managers.TokenManager
 import retrofit2.Call
@@ -22,6 +22,7 @@ class FinalSelectFragment : Fragment() {
 
     private var binding: FragmentFinalSelectBinding? = null
     private lateinit var tokenManager: TokenManager
+    private lateinit var firstEntryManager: FirstEntryManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +41,7 @@ class FinalSelectFragment : Fragment() {
 
     private fun init(){
         tokenManager = TokenManager(requireActivity())
+        firstEntryManager = FirstEntryManager(requireActivity())
         val bundle = this.arguments
         val id = bundle!!.getInt("id")
         Log.d("MyLog", id.toString())
@@ -68,7 +70,7 @@ class FinalSelectFragment : Fragment() {
                 response: Response<GetUserPathHouseResponse>
             ) {
                 if (response.isSuccessful) {
-//                    firstEntryManager.saveFirstEntry(true)
+                    firstEntryManager.saveFirstEntry(true)
                     binding!!.progressLogin.visibility = View.INVISIBLE
                     val transaction = requireActivity().supportFragmentManager.beginTransaction()
                     val bottomNavigationFragment = BottomNavigationFragment()
@@ -88,7 +90,6 @@ class FinalSelectFragment : Fragment() {
                 binding!!.buttonNext.visibility = View.VISIBLE
                 binding!!.progressLogin.visibility = View.INVISIBLE
             }
-
         })
     }
 

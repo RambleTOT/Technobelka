@@ -1,3 +1,4 @@
+import com.example.inversetechnobelka.data.model.GetHousesResponse
 import com.google.gson.annotations.SerializedName
 
 data class GetTokenResponse(
@@ -5,4 +6,6 @@ data class GetTokenResponse(
     val token: String?,
     @SerializedName("phone")
     val phone: String?,
+    @SerializedName("house")
+    val house: GetHousesResponse?,
 )

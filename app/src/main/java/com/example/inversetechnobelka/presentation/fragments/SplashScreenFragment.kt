@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.databinding.FragmentSplashScreenBinding
+import com.example.inversetechnobelka.presentation.managers.FirstEntryManager
 
 class SplashScreenFragment : Fragment() {
 
     private var binding: FragmentSplashScreenBinding? = null
+    private lateinit var firstEntryManager: FirstEntryManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,13 +30,24 @@ class SplashScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val fadeInAnimation = AnimationUtils.loadAnimation(requireActivity(), R.anim.splash_screen_animation)
         binding!!.linearSplash.startAnimation(fadeInAnimation)
-        Handler().postDelayed(Runnable {
-            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            val loginFragment = LoginFragment()
-            transaction.replace(R.id.layout_fragment, loginFragment)
-            transaction.disallowAddToBackStack()
-            transaction.commit()
-        }, 3000)
+        firstEntryManager = FirstEntryManager(requireActivity())
+        if (firstEntryManager.getFirstEntry() == true){
+            Handler().postDelayed(Runnable {
+                val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                val bottomNavigationFragment = BottomNavigationFragment()
+                transaction.replace(R.id.layout_fragment, bottomNavigationFragment)
+                transaction.disallowAddToBackStack()
+                transaction.commit()
+            }, 3000)
+        }else{
+            Handler().postDelayed(Runnable {
+                val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                val loginFragment = LoginFragment()
+                transaction.replace(R.id.layout_fragment, loginFragment)
+                transaction.disallowAddToBackStack()
+                transaction.commit()
+            }, 3000)
+        }
     }
 
 }
