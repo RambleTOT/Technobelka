@@ -1,5 +1,7 @@
 package com.example.inversetechnobelka
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -49,7 +51,8 @@ class CurrentEventsFragment : Fragment() {
             transaction.commit()
         }
         binding!!.buttonLink.setOnClickListener {
-
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(linkButton))
+            startActivity(intent)
         }
         getDataAboutEvents(id)
     }
@@ -69,6 +72,9 @@ class CurrentEventsFragment : Fragment() {
                         linkButton = body.link.toString()
                         binding!!.nameEvents.text = body.name
                         binding!!.levelDescription.text = body.description
+
+                        binding!!.layoutVisible.visibility = View.VISIBLE
+                        binding!!.progress.visibility = View.GONE
                     }
                 }
 
