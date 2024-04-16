@@ -10,8 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.inversetechnobelka.FinalSelectFragment
 import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.data.model.GetHousesResponse
 import com.example.inversetechnobelka.databinding.FragmentFacultySelectionBinding

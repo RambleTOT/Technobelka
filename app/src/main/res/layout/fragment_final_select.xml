@@ -4,20 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FinalSelectFragment">
+    tools:context=".presentation.fragments.FinalSelectFragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:gravity="center"
             android:elevation="0dp"
             android:outlineSpotShadowColor="@android:color/transparent"
             app:cardCornerRadius="11dp"
@@ -36,22 +38,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_your_faculty"
             android:layout_gravity="center"
-            android:textColor="@color/color_text_title"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/gramatika_bold"
-            android:textSize="24sp"
-            android:layout_marginTop="16dp"/>
+            android:text="@string/text_your_faculty"
+            android:textColor="@color/color_text_title"
+            android:textSize="24sp" />
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="гриффиндор!"
             android:layout_gravity="center"
-            android:textColor="@color/color_orange"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/gramatika_bold"
+            android:textColor="@color/color_orange"
             android:textSize="24sp"
-            android:layout_marginTop="8dp"/>
+            tools:text="гриффиндор!" />
 
     </LinearLayout>
 
@@ -67,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button_random"
+            android:id="@+id/button_select"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -83,20 +86,35 @@
             android:textSize="18sp"
             app:cornerRadius="100dp" />
 
-        <Button
-            android:id="@+id/button_select"
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/color_orange"
-            android:fontFamily="@font/arial_bold"
-            android:includeFontPadding="false"
-            android:lineSpacingExtra="4sp"
-            android:paddingHorizontal="36dp"
-            android:paddingVertical="24dp"
-            android:text="@string/text_to_next"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:cornerRadius="100dp" />
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_orange"
+                android:fontFamily="@font/arial_bold"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="4sp"
+                android:paddingHorizontal="36dp"
+                android:paddingVertical="24dp"
+                android:text="@string/text_to_next"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:cornerRadius="100dp" />
+
+            <ProgressBar
+                android:id="@+id/progress_login"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/color_orange"
+                android:visibility="invisible"
+                tools:visibility="visible"/>
+
+        </FrameLayout>
 
     </LinearLayout>
 

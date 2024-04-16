@@ -21,6 +21,7 @@ import androidx.core.content.ContextCompat
 import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.databinding.FragmentLoginBinding
 import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
+import com.example.inversetechnobelka.presentation.managers.TokenManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,6 +31,7 @@ class LoginFragment : Fragment() {
     private var binding: FragmentLoginBinding? = null
     private var isEmptyLogin = false
     private var isEmptyPassword = false
+    private lateinit var tokenManager: TokenManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,7 +50,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun init(){
-//        tokenManager = TokenManager(requireActivity())
+        tokenManager = TokenManager(requireActivity())
 //        firstEntryManager = FirstEntryManager(requireActivity())
         binding!!.buttonLogin.setOnClickListener {
             binding!!.buttonLogin.visibility = View.INVISIBLE
@@ -132,7 +134,7 @@ class LoginFragment : Fragment() {
                 response: Response<GetTokenResponse>
             ) {
                 if (response.isSuccessful) {
-//                    tokenManager.saveToken(response.body()!!.token.toString())
+                    tokenManager.saveToken(response.body()!!.token.toString())
 //                    firstEntryManager.saveFirstEntry(true)
                     binding!!.progressLogin.visibility = View.INVISIBLE
                     Toast.makeText(activity, "Успех", Toast.LENGTH_SHORT).show()
