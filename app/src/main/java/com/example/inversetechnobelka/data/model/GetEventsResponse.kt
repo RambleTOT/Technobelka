@@ -17,4 +17,6 @@ data class GetEventsResponse(
     val prize: Int?,
     @SerializedName("level")
     val level: LevelEntity,
+    @SerializedName("image")
+    val link: String?,
 )
