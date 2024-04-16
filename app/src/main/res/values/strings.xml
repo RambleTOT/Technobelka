@@ -25,6 +25,6 @@
     <string name="text_profile">Профиль</string>
     <string name="text_my_events">Мои события</string>
     <string name="text_my_achievements">Мои достижения</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="text_events_title">Мероприятия</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -12,4 +12,5 @@
     <color name="color_block_button_text">#47101114</color>
     <color name="color_orange">#EE7527</color>
     <color name="color_orange_item_faculty_student">#14EE7527</color>
+    <color name="color_date_item">#7B7B7B</color>
 </resources>
