@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.inversetechnobelka.CurrentEventsFragment
 import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.data.model.GetEventsResponse
 import com.example.inversetechnobelka.databinding.FragmentEventsBinding
@@ -57,12 +58,23 @@ class EventsFragment : Fragment() {
                     eventsList = response.body()!!
                     binding!!.recyclerEvents.apply {
                         eventsAdapter = EventsAdapter(eventsList)
+                        eventsAdapter.onItemClick = {
+                            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                            val currentEventsFragment = CurrentEventsFragment()
+                            val bundle = Bundle()
+                            bundle.putInt("id", it.id!!)
+                            currentEventsFragment.arguments = bundle
+                            transaction.replace(R.id.layout_fragment, currentEventsFragment)
+                            transaction.disallowAddToBackStack()
+                            transaction.commit()
+                        }
                         adapter = eventsAdapter
                         layoutManager = LinearLayoutManager(requireActivity());
 
                     }
                 }
-                Log.d("MyLog", response.toString())
+                binding!!.layoutVisible.visibility = View.VISIBLE
+                binding!!.progressLogin.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<List<GetEventsResponse>>, t: Throwable) {

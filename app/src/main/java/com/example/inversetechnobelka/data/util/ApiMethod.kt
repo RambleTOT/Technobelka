@@ -3,6 +3,7 @@ package com.example.inversetechnobelka.data.util
 import GetTokenResponse
 import UserLoginEntity
 import UserLoginPatchEntity
+import com.example.inversetechnobelka.data.model.GetCurrentEventsResponse
 import com.example.inversetechnobelka.data.model.GetEventsResponse
 import com.example.inversetechnobelka.data.model.GetHousesResponse
 import com.example.inversetechnobelka.data.model.GetMyAccountResponse
@@ -13,6 +14,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.PATCH
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiMethod {
 
@@ -39,5 +41,10 @@ interface ApiMethod {
     @GET("events")
     fun getEvents(
     ): Call<List<GetEventsResponse>>
+
+    @GET("events/{id}")
+    fun getCurrentEvents(
+        @Path("id") id: Int
+    ): Call<GetCurrentEventsResponse>
 
 }

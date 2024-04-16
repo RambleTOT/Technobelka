@@ -1,4 +1,4 @@
-package com.example.inversetechnobelka
+package com.example.inversetechnobelka.presentation.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.inversetechnobelka.data.model.GetMyAccountResponse
-import com.example.inversetechnobelka.databinding.FragmentFacultySelectionBinding
 import com.example.inversetechnobelka.databinding.FragmentProfileBinding
 import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
 import com.example.inversetechnobelka.presentation.managers.TokenManager

@@ -6,6 +6,8 @@ import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.inversetechnobelka.data.model.GetEventsResponse
 import com.example.inversetechnobelka.databinding.ItemEventsBinding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class EventsAdapter (
     private val sectionsList: List<GetEventsResponse>
@@ -31,10 +33,19 @@ class EventsAdapter (
             nameEvents.text = currentItem.name
             dateLevel.text = currentItem.level.name
             userCount.text = currentItem.prize.toString()
+            dateUser.text = parseDate(currentItem.expireAt.toString())
             holder.itemView.setOnClickListener{
                 onItemClick?.invoke(currentItem)
             }
         }
+    }
+
+    fun parseDate(inputDate: String): String {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("d MMMM", Locale("ru"))
+
+        val date = inputFormat.parse(inputDate)
+        return outputFormat.format(date!!)
     }
 
 }

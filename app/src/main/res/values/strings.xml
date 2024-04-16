@@ -26,5 +26,7 @@
     <string name="text_my_events">Мои события</string>
     <string name="text_my_achievements">Мои достижения</string>
     <string name="text_events_title">Мероприятия</string>
+    <string name="text_go_to_events">Перейти к мероприятию</string>
+    <string name="text_i_will_go">Я пойду</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
