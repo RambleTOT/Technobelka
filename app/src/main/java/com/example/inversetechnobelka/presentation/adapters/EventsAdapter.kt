@@ -38,7 +38,7 @@ class EventsAdapter (
             dateLevel.text = currentItem.level.name
             userCount.text = currentItem.prize.toString()
             dateUser.text = parseDate(currentItem.expireAt.toString())
-            Picasso.with(context).load(currentItem.link).into(imageEvents);
+            Picasso.with(context).load(currentItem.link).into(imageEvents)
             holder.itemView.setOnClickListener{
                 onItemClick?.invoke(currentItem)
             }

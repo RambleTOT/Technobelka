@@ -138,7 +138,6 @@ class LoginFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     tokenManager.saveToken(response.body()!!.token.toString())
-                    firstEntryManager.saveFirstEntry(true)
                     binding!!.progressLogin.visibility = View.INVISIBLE
                     Log.d("MyLog", response.body()!!.house.toString())
                     if(response.body()!!.house == null){
@@ -147,6 +146,7 @@ class LoginFragment : Fragment() {
                         transaction.disallowAddToBackStack()
                         transaction.commit()
                     }else {
+                        firstEntryManager.saveFirstEntry(true)
                         val transaction = activity!!.supportFragmentManager.beginTransaction()
                         transaction.replace(R.id.layout_fragment, BottomNavigationFragment())
                         transaction.disallowAddToBackStack()

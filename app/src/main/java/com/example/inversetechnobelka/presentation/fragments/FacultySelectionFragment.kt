@@ -14,6 +14,7 @@ import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.data.model.GetHousesResponse
 import com.example.inversetechnobelka.databinding.FragmentFacultySelectionBinding
 import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -83,6 +84,7 @@ class FacultySelectionFragment : Fragment() {
             val bundle = Bundle()
             bundle.putInt("id", currentClick)
             bundle.putString("name", housesList[currentClick-1].name)
+            bundle.putString("image", housesList[currentClick-1].image!!.url)
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
             val finalSelectFragment = FinalSelectFragment()
             finalSelectFragment.arguments = bundle
@@ -95,6 +97,7 @@ class FacultySelectionFragment : Fragment() {
             val bundle = Bundle()
             bundle.putInt("id", ran)
             bundle.putString("name", housesList[ran-1].name)
+            bundle.putString("image", housesList[ran-1].image!!.url)
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
             val finalSelectFragment = FinalSelectFragment()
             finalSelectFragment.arguments = bundle
@@ -148,18 +151,26 @@ class FacultySelectionFragment : Fragment() {
                     binding!!.description.text = housesList[0].description
                     binding!!.ourValues.text = housesList[0].ourValues
                     binding!!.userCount.text = "${housesList[0].usersCount} участников"
+                    Picasso.with(requireActivity()).load(housesList[0].image!!.url).into(binding!!.image1)
+
                     binding!!.name2.text = housesList[1].name
                     binding!!.description2.text = housesList[1].description
                     binding!!.ourValues2.text = housesList[1].ourValues
                     binding!!.userCount2.text = "${housesList[1].usersCount} участников"
+                    Picasso.with(requireActivity()).load(housesList[1].image!!.url).into(binding!!.image2)
+
                     binding!!.name3.text = housesList[2].name
                     binding!!.description3.text = housesList[2].description
                     binding!!.ourValues3.text = housesList[2].ourValues
                     binding!!.userCount3.text = "${housesList[2].usersCount} участников"
+                    Picasso.with(requireActivity()).load(housesList[2].image!!.url).into(binding!!.image3)
+
                     binding!!.name4.text = housesList[3].name
                     binding!!.description4.text = housesList[3].description
                     binding!!.ourValues4.text = housesList[3].ourValues
                     binding!!.userCount4.text = "${housesList[3].usersCount} участников"
+                    Picasso.with(requireActivity()).load(housesList[3].image!!.url).into(binding!!.image4)
+
                     binding!!.mainLayout.visibility = View.VISIBLE
                 }
                 Log.d("MyLog", response.toString())

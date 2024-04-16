@@ -14,6 +14,7 @@ import com.example.inversetechnobelka.databinding.FragmentFinalSelectBinding
 import com.example.inversetechnobelka.presentation.managers.FirstEntryManager
 import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
 import com.example.inversetechnobelka.presentation.managers.TokenManager
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -44,8 +45,9 @@ class FinalSelectFragment : Fragment() {
         firstEntryManager = FirstEntryManager(requireActivity())
         val bundle = this.arguments
         val id = bundle!!.getInt("id")
-        Log.d("MyLog", id.toString())
         val name = bundle!!.getString("name")
+        val image = bundle!!.getString("image")
+        Picasso.with(requireActivity()).load(image).into(binding!!.image)
         binding!!.name.text = "${name}!"
         binding!!.buttonSelect.setOnClickListener {
             val transaction = requireActivity().supportFragmentManager.beginTransaction()

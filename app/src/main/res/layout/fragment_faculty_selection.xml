@@ -96,6 +96,7 @@
                                 app:layout_constraintStart_toStartOf="parent">
 
                                 <ImageView
+                                    android:id="@+id/image1"
                                     android:layout_width="57dp"
                                     android:layout_height="57dp"
                                     android:scaleType="centerCrop"
@@ -175,7 +176,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/arial_bold"
-                            android:text="@string/text_about_faculty"
+                            android:text="@string/text_our_values"
                             android:textColor="@color/color_text_title"
                             android:textSize="16sp"
                             android:layout_marginTop="16dp"
@@ -233,6 +234,7 @@
                                 app:layout_constraintStart_toStartOf="parent">
 
                                 <ImageView
+                                    android:id="@+id/image2"
                                     android:layout_width="57dp"
                                     android:layout_height="57dp"
                                     android:scaleType="centerCrop"
@@ -312,7 +314,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/arial_bold"
-                            android:text="@string/text_about_faculty"
+                            android:text="@string/text_our_values"
                             android:textColor="@color/color_text_title"
                             android:textSize="16sp"
                             android:layout_marginTop="16dp"
@@ -370,6 +372,7 @@
                                 app:layout_constraintStart_toStartOf="parent">
 
                                 <ImageView
+                                    android:id="@+id/image3"
                                     android:layout_width="57dp"
                                     android:layout_height="57dp"
                                     android:scaleType="centerCrop"
@@ -449,7 +452,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/arial_bold"
-                            android:text="@string/text_about_faculty"
+                            android:text="@string/text_our_values"
                             android:textColor="@color/color_text_title"
                             android:textSize="16sp"
                             android:layout_marginTop="16dp"
@@ -506,6 +509,7 @@
                                 app:layout_constraintStart_toStartOf="parent">
 
                                 <ImageView
+                                    android:id="@+id/image4"
                                     android:layout_width="57dp"
                                     android:layout_height="57dp"
                                     android:scaleType="centerCrop"
@@ -585,7 +589,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/arial_bold"
-                            android:text="@string/text_about_faculty"
+                            android:text="@string/text_our_values"
                             android:textColor="@color/color_text_title"
                             android:textSize="16sp"
                             android:layout_marginTop="16dp"

@@ -8,11 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.inversetechnobelka.CurrentEventsFragment
 import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.data.model.GetEventsResponse
 import com.example.inversetechnobelka.databinding.FragmentEventsBinding
-import com.example.inversetechnobelka.databinding.FragmentLoginBinding
 import com.example.inversetechnobelka.presentation.adapters.EventsAdapter
 import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
 import retrofit2.Call

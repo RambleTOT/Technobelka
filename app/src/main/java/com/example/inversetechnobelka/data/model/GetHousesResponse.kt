@@ -1,5 +1,6 @@
 package com.example.inversetechnobelka.data.model
 
+import FacultyImageEntity
 import com.google.gson.annotations.SerializedName
 
 data class GetHousesResponse(
@@ -13,4 +14,6 @@ data class GetHousesResponse(
     val ourValues: String?,
     @SerializedName("usersCount")
     val usersCount: Int?,
+    @SerializedName("image")
+    val image: FacultyImageEntity?,
 )

@@ -1,4 +1,4 @@
-package com.example.inversetechnobelka
+package com.example.inversetechnobelka.presentation.fragments
 
 import android.content.Intent
 import android.net.Uri
@@ -9,11 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.data.model.GetCurrentEventsResponse
 import com.example.inversetechnobelka.databinding.FragmentCurrentEventsBinding
-import com.example.inversetechnobelka.databinding.FragmentEventsBinding
-import com.example.inversetechnobelka.presentation.fragments.BottomNavigationFragment
-import com.example.inversetechnobelka.presentation.fragments.EventsFragment
 import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
 import retrofit2.Call
 import retrofit2.Callback
