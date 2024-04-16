@@ -6,12 +6,17 @@
     <string name="text_by_inverse">by Inverse</string>
     <string name="text_to_login">Войти</string>
     <string name="text_to_select">Выбрать</string>
+    <string name="text_to_next">Далее</string>
     <string name="text_random">Рандом</string>
+    <string name="text_select_sam">Выбрать самому</string>
     <string name="text_person_login">Логин</string>
     <string name="text_password">Пароль</string>
     <string name="text_error_login">Неправильный номер или пароль</string>
     <string name="text_select_faculty">Выберите факультет</string>
+    <string name="text_your_faculty">Ваш факультет</string>
     <string name="text_cannot_be_changed">Это решение нельзя изменить</string>
     <string name="text_about_faculty">О факультете</string>
     <string name="text_our_values">Наши ценности</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

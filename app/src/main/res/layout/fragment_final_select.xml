@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FinalSelectFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:elevation="0dp"
+            android:outlineSpotShadowColor="@android:color/transparent"
+            app:cardCornerRadius="11dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="157dp"
+                android:layout_height="157dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/test_photo" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_your_faculty"
+            android:layout_gravity="center"
+            android:textColor="@color/color_text_title"
+            android:fontFamily="@font/gramatika_bold"
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="гриффиндор!"
+            android:layout_gravity="center"
+            android:textColor="@color/color_orange"
+            android:fontFamily="@font/gramatika_bold"
+            android:textSize="24sp"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:orientation="horizontal"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_random"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/arial_bold"
+            android:foreground="@drawable/button_random_background"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="4sp"
+            android:paddingHorizontal="42dp"
+            android:paddingVertical="21dp"
+            android:text="@string/text_select_sam"
+            android:textColor="@color/color_orange"
+            android:textSize="18sp"
+            app:cornerRadius="100dp" />
+
+        <Button
+            android:id="@+id/button_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_orange"
+            android:fontFamily="@font/arial_bold"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="4sp"
+            android:paddingHorizontal="36dp"
+            android:paddingVertical="24dp"
+            android:text="@string/text_to_next"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:cornerRadius="100dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
