@@ -17,6 +17,11 @@
     <string name="text_cannot_be_changed">Это решение нельзя изменить</string>
     <string name="text_about_faculty">О факультете</string>
     <string name="text_our_values">Наши ценности</string>
+    <string name="text_home">Главная</string>
+    <string name="text_rating">Рейтинг</string>
+    <string name="text_tasks">Задачи</string>
+    <string name="text_events">События</string>
+    <string name="text_profile">Профиль</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

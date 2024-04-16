@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navbar_home"
+        android:title="@string/text_home"
+        android:icon="@drawable/icon_home"
+        />
+
+    <item
+        android:id="@+id/navbar_rating"
+        android:title="@string/text_rating"
+        android:icon="@drawable/icon_rating"
+        />
+
+    <item
+        android:title="@string/text_tasks"
+        android:id="@+id/navbar_tasks"
+        android:icon="@drawable/icon_tasks"
+        />
+
+    <item
+        android:title="@string/text_events"
+        android:id="@+id/navbar_events"
+        android:icon="@drawable/icon_calendar"
+        />
+
+    <item
+        android:title="@string/text_profile"
+        android:id="@+id/navbar_profile"
+        android:icon="@drawable/icon_profile"
+        />
+
+</menu>
