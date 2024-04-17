@@ -52,4 +52,8 @@ interface ApiMethod {
     fun getAllTasks(
     ): Call<List<GetAllTasksResponse>>
 
+    @GET("tasks/{id}")
+    fun getCurrentTasks(
+        @Path("id") id: Int
+    ): Call<GetAllTasksResponse>
 }

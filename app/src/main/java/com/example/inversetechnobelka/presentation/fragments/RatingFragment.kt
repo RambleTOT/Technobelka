@@ -90,14 +90,14 @@ class RatingFragment : Fragment() {
                     binding!!.recyclerTasks.apply {
                         allTasksAdapter = AllTasksAdapter(allTasksList)
                         allTasksAdapter.onItemClick = {
-//                            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-//                            val currentSectionsFragment = CurrentSectionsFragment()
-//                            val bundle = Bundle()
-//                            bundle.putInt("id", it.id!!)
-//                            currentSectionsFragment.arguments = bundle
-//                            transaction.replace(R.id.linear_fragment, currentSectionsFragment)
-//                            transaction.disallowAddToBackStack()
-//                            transaction.commit()
+                            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                            val currentTasksFragment = CurrentTasksFragment()
+                            val bundle = Bundle()
+                            bundle.putInt("id", it.id!!)
+                            currentTasksFragment.arguments = bundle
+                            transaction.replace(R.id.layout_fragment, currentTasksFragment)
+                            transaction.disallowAddToBackStack()
+                            transaction.commit()
                         }
                         adapter = allTasksAdapter
                         layoutManager = GridLayoutManager(requireActivity(), 2)

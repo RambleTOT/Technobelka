@@ -15,8 +15,6 @@ data class GetAllTasksResponse(
     val expireAt: String?,
     @SerializedName("timeUntil")
     val timeUntil: String?,
-    @SerializedName("image")
-    val image: String?,
     @SerializedName("prize")
     val prize: Int?,
     @SerializedName("type")
