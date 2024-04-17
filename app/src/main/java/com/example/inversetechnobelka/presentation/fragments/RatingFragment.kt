@@ -1,4 +1,4 @@
-package com.example.inversetechnobelka
+package com.example.inversetechnobelka.presentation.fragments
 
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -11,9 +11,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.inversetechnobelka.R
 import com.example.inversetechnobelka.data.model.GetAllTasksResponse
-import com.example.inversetechnobelka.databinding.FragmentHomeBinding
 import com.example.inversetechnobelka.databinding.FragmentRatingBinding
 import com.example.inversetechnobelka.presentation.adapters.AllTasksAdapter
 import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
@@ -49,9 +48,13 @@ class RatingFragment : Fragment() {
         binding!!.clickLayoutOne.setOnClickListener {
             if (currentClickLayout == 2){
                 binding!!.clickLayoutOne.setBackgroundResource(R.drawable.background_tapbar_rating)
-                binding!!.clickTextOne.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(), R.color.white)))
+                binding!!.clickTextOne.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(),
+                    R.color.white
+                )))
                 binding!!.clickLayoutTwo.setBackgroundColor(Color.TRANSPARENT)
-                binding!!.clickTextTwo.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(), R.color.color_text_title)))
+                binding!!.clickTextTwo.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(),
+                    R.color.color_text_title
+                )))
                 binding!!.layoutFaculty.visibility = View.VISIBLE
                 binding!!.layoutPersonal.visibility = View.GONE
                 currentClickLayout = 1
@@ -60,9 +63,13 @@ class RatingFragment : Fragment() {
         binding!!.clickLayoutTwo.setOnClickListener {
             if (currentClickLayout == 1) {
                 binding!!.clickLayoutTwo.setBackgroundResource(R.drawable.background_tapbar_rating)
-                binding!!.clickTextTwo.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(), R.color.white)))
+                binding!!.clickTextTwo.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(),
+                    R.color.white
+                )))
                 binding!!.clickLayoutOne.setBackgroundColor(Color.TRANSPARENT)
-                binding!!.clickTextOne.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(), R.color.color_text_title)))
+                binding!!.clickTextOne.setTextColor(ColorStateList.valueOf(ContextCompat.getColor(requireActivity(),
+                    R.color.color_text_title
+                )))
                 binding!!.layoutFaculty.visibility = View.GONE
                 binding!!.layoutPersonal.visibility = View.VISIBLE
                 currentClickLayout = 2

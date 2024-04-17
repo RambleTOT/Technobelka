@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.inversetechnobelka.R
-import com.example.inversetechnobelka.RatingFragment
 import com.example.inversetechnobelka.TasksFragment
 import com.example.inversetechnobelka.databinding.FragmentBottomNavigationBinding
 

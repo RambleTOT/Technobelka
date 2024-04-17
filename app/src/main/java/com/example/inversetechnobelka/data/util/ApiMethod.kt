@@ -28,13 +28,13 @@ interface ApiMethod {
     fun getHouses(
     ): Call<List<GetHousesResponse>>
 
-    @PATCH("users")
+    @PATCH("users/me")
     fun changeUserHouse(
         @Body body: UserLoginPatchEntity,
         @Header("Authorization") token: String
     ): Call<GetUserPathHouseResponse>
 
-    @GET("users/me/")
+    @GET("users/me")
     fun getMyAccount(
         @Header("Authorization") token: String
     ): Call<GetMyAccountResponse>

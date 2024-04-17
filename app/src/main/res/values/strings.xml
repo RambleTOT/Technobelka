@@ -33,4 +33,5 @@
     <string name="text_faculties">Факультеты</string>
     <string name="text_personal">Личный</string>
     <string name="text_place_in_rating">Место в рейтинге</string>
+    <string name="text_to_execution">Приступить к выполнению</string>
 </resources>
