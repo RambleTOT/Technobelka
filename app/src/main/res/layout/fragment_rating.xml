@@ -3,12 +3,864 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RatingFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RatingFragment"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ProgressBar
+        android:id="@+id/progress_login"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="@color/color_orange"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <LinearLayout
+        android:id="@+id/layout_visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/achievements_background"
+                    android:paddingVertical="7dp"
+                    android:paddingHorizontal="15dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/click_layout_one"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/background_tapbar_rating"
+                        android:paddingVertical="13dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/click_text_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_bold"
+                            android:includeFontPadding="false"
+                            android:text="@string/text_faculties"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/click_layout_two"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="13dp"
+                        android:orientation="horizontal"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:gravity="center"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/click_text_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_bold"
+                            android:includeFontPadding="false"
+                            android:text="@string/text_personal"
+                            android:layout_gravity="center"
+                            android:textColor="@color/color_text_title"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_faculty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    tools:visibility="visible">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@drawable/achievements_background">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arial_bold"
+                                android:includeFontPadding="false"
+                                android:text="@string/text_place_in_rating"
+                                android:layout_marginTop="40dp"
+                                android:textColor="@color/color_text_title"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="16dp"/>
+
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:src="@drawable/icon_star"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/text_place_faculty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arial_regular"
+                                android:includeFontPadding="false"
+                                android:text="1"
+                                android:layout_gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="32sp" />
+
+                        </FrameLayout>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:padding="16dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/achievements_background">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:src="@drawable/icon_star"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/arial_regular"
+                                        android:includeFontPadding="false"
+                                        android:text="1"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="Гриффиндор"
+                                    android:textColor="@color/color_text_title"
+                                    android:textSize="14sp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="200"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_orange"
+                                    android:layout_marginEnd="4dp"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/icon_orange_flash"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1"
+                            android:layout_marginTop="8dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:src="@drawable/icon_star"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/arial_regular"
+                                        android:includeFontPadding="false"
+                                        android:text="2"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="Гриффиндор"
+                                    android:textColor="@color/color_text_title"
+                                    android:textSize="14sp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="200"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_orange"
+                                    android:layout_marginEnd="4dp"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/icon_orange_flash"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginTop="8dp">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:src="@drawable/icon_star"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/arial_regular"
+                                        android:includeFontPadding="false"
+                                        android:text="3"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="Гриффиндор"
+                                    android:textColor="@color/color_text_title"
+                                    android:textSize="14sp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="200"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_orange"
+                                    android:layout_marginEnd="4dp"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/icon_orange_flash"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginTop="8dp">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:src="@drawable/icon_star"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/arial_regular"
+                                        android:includeFontPadding="false"
+                                        android:text="4"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="Гриффиндор"
+                                    android:textColor="@color/color_text_title"
+                                    android:textSize="14sp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="200"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_orange"
+                                    android:layout_marginEnd="4dp"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/icon_orange_flash"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_personal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@drawable/achievements_background">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arial_bold"
+                                android:includeFontPadding="false"
+                                android:text="@string/text_place_in_rating"
+                                android:layout_marginTop="40dp"
+                                android:textColor="@color/color_text_title"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="16dp"/>
+
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:src="@drawable/icon_star"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/arial_regular"
+                                android:includeFontPadding="false"
+                                android:text="1"
+                                android:layout_gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="32sp" />
+
+                        </FrameLayout>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_count_profile"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="6dp"
+                        android:orientation="horizontal"
+                        android:layout_gravity="start">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/arial_regular"
+                            android:includeFontPadding="false"
+                            android:text="На проверке"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:padding="16dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/achievements_background">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:src="@drawable/icon_star"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/arial_regular"
+                                        android:includeFontPadding="false"
+                                        android:text="1"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="Гриффиндор"
+                                    android:textColor="@color/color_text_title"
+                                    android:textSize="14sp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="200"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_orange"
+                                    android:layout_marginEnd="4dp"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/icon_orange_flash"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1"
+                            android:layout_marginTop="8dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:src="@drawable/icon_star"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/arial_regular"
+                                        android:includeFontPadding="false"
+                                        android:text="2"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="Гриффиндор"
+                                    android:textColor="@color/color_text_title"
+                                    android:textSize="14sp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="200"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_orange"
+                                    android:layout_marginEnd="4dp"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/icon_orange_flash"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginTop="8dp">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:src="@drawable/icon_star"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/arial_regular"
+                                        android:includeFontPadding="false"
+                                        android:text="3"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="Гриффиндор"
+                                    android:textColor="@color/color_text_title"
+                                    android:textSize="14sp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="200"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_orange"
+                                    android:layout_marginEnd="4dp"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/icon_orange_flash"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginTop="8dp">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:src="@drawable/icon_star"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/arial_regular"
+                                        android:includeFontPadding="false"
+                                        android:text="4"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="15sp" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="Гриффиндор"
+                                    android:textColor="@color/color_text_title"
+                                    android:textSize="14sp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="12dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/arial_regular"
+                                    android:includeFontPadding="false"
+                                    tools:text="200"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/color_orange"
+                                    android:layout_marginEnd="4dp"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/icon_orange_flash"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>x
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/arial_bold"
+                    android:text="@string/text_tasks"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_text_title"
+                    android:textSize="21sp"
+                    android:layout_marginTop="32dp"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
 
 </FrameLayout>

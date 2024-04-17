@@ -30,4 +30,7 @@
     <string name="text_i_will_go">Я пойду</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_statics">Статистика</string>
+    <string name="text_faculties">Факультеты</string>
+    <string name="text_personal">Личный</string>
+    <string name="text_place_in_rating">Место в рейтинге</string>
 </resources>
