@@ -3,19 +3,31 @@ package com.example.inversetechnobelka
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.inversetechnobelka.data.model.GetAllTasksResponse
 import com.example.inversetechnobelka.databinding.FragmentHomeBinding
 import com.example.inversetechnobelka.databinding.FragmentRatingBinding
+import com.example.inversetechnobelka.presentation.adapters.AllTasksAdapter
+import com.example.inversetechnobelka.presentation.managers.RetrofitHelper
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class RatingFragment : Fragment() {
 
     private var binding: FragmentRatingBinding? = null
     private var currentClickLayout = 1
+    private lateinit var allTasksAdapter: AllTasksAdapter
+    private lateinit var allTasksList: List<GetAllTasksResponse>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +42,7 @@ class RatingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+        getAllTasks()
     }
 
     private fun init(){
@@ -56,5 +69,41 @@ class RatingFragment : Fragment() {
             }
         }
     }
+
+    private fun getAllTasks(){
+        RetrofitHelper().getApi().getAllTasks().enqueue(object :
+            Callback<List<GetAllTasksResponse>> {
+
+            override fun onResponse(
+                call: Call<List<GetAllTasksResponse>>,
+                response: Response<List<GetAllTasksResponse>>
+            ) {
+                if (response.isSuccessful){
+                    allTasksList = response.body()!!
+                    binding!!.recyclerTasks.apply {
+                        allTasksAdapter = AllTasksAdapter(allTasksList)
+                        allTasksAdapter.onItemClick = {
+//                            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+//                            val currentSectionsFragment = CurrentSectionsFragment()
+//                            val bundle = Bundle()
+//                            bundle.putInt("id", it.id!!)
+//                            currentSectionsFragment.arguments = bundle
+//                            transaction.replace(R.id.linear_fragment, currentSectionsFragment)
+//                            transaction.disallowAddToBackStack()
+//                            transaction.commit()
+                        }
+                        adapter = allTasksAdapter
+                        layoutManager = GridLayoutManager(requireActivity(), 2)
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<GetAllTasksResponse>>, t: Throwable) {
+                Log.d("MyLog", t.message.toString())
+                Toast.makeText(activity, "Возникла ошибка, проверьте подключение", Toast.LENGTH_SHORT).show()            }
+
+        })
+    }
+
 
 }

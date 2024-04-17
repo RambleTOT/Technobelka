@@ -842,7 +842,7 @@
 
                         </LinearLayout>
 
-                    </LinearLayout>x
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -856,6 +856,14 @@
                     android:textColor="@color/color_text_title"
                     android:textSize="21sp"
                     android:layout_marginTop="32dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_tasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    tools:listitem="@layout/item_sectionx"
+                    android:layout_marginBottom="8dp"/>
 
             </LinearLayout>
 

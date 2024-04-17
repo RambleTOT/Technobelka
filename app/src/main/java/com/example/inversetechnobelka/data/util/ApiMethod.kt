@@ -3,6 +3,7 @@ package com.example.inversetechnobelka.data.util
 import GetTokenResponse
 import UserLoginEntity
 import UserLoginPatchEntity
+import com.example.inversetechnobelka.data.model.GetAllTasksResponse
 import com.example.inversetechnobelka.data.model.GetCurrentEventsResponse
 import com.example.inversetechnobelka.data.model.GetEventsResponse
 import com.example.inversetechnobelka.data.model.GetHousesResponse
@@ -46,5 +47,9 @@ interface ApiMethod {
     fun getCurrentEvents(
         @Path("id") id: Int
     ): Call<GetCurrentEventsResponse>
+
+    @GET("tasks")
+    fun getAllTasks(
+    ): Call<List<GetAllTasksResponse>>
 
 }
