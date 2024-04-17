@@ -102,6 +102,8 @@ class RatingFragment : Fragment() {
                         adapter = allTasksAdapter
                         layoutManager = GridLayoutManager(requireActivity(), 2)
                     }
+                    binding!!.layoutVisible.visibility = View.VISIBLE
+                    binding!!.progressLogin.visibility = View.GONE
                 }
             }
 
